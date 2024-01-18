@@ -1,4 +1,2 @@
-#!/usr/bin/env bash
-#A script to run a c file through the preprocessor and output it to the file c
-
+#!/bin/bash
 gcc -E $CFILE > c
