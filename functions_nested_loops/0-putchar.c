@@ -1,12 +1,12 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * _putchar - writes '_putchar' to terminal
+ * main - Entry point
  *
- * Return - void
+ * Return: Always 0 (Success)
  */
 
-void _putchar(void)
+int main(void)
 {
 putchar('_');
 putchar('p');
@@ -17,17 +17,5 @@ putchar('h');
 putchar('a');
 putchar('r');
 putchar('\n');
-return;
-}
-
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-
-int main(void)
-{
-_putchar();
 return (0);
 }
