@@ -7,11 +7,10 @@
 
 void times_table(void)
 {
-int i;
+int i, j, sum, sum1, sum2;
 for (i = 0; i < 10; i++)
 {
 printf("0, ");
-int j, sum, sum1, sum2;
 for (j = 1; j < 10; j++)
 {
 sum =(i * j);
