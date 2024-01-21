@@ -41,5 +41,9 @@ printf("%d", n);
 n--;
 }
 }
+else 
+{
+printf("98");
+}
 }
 
