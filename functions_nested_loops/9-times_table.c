@@ -18,12 +18,13 @@ sum1 =(sum/10);
 sum2 =(sum % 10);
 if (sum1 == 0)
 {
-putchar("  ");
+putchar(' ');
+putchar(' ');
 putchar(sum2 + '0');
 }
 else
 {
-putchar(" ");
+putchar(' ');
 putchar(sum1 + '0');
 putchar(sum2 + '0');
 }
