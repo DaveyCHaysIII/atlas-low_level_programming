@@ -13,9 +13,9 @@ for (i = 0; i < 10; i++)
 printf("0,");
 for (j = 1; j < 10; j++)
 {
-sum =(i * j);
-sum1 =(sum/10);
-sum2 =(sum % 10);
+sum = (i * j);
+sum1 = (sum/10);
+sum2 = (sum % 10);
 if (sum1 == 0)
 {
 putchar(' ');
@@ -28,7 +28,7 @@ putchar(' ');
 putchar(sum1 + '0');
 putchar(sum2 + '0');
 }
-if(j != 9)
+if (j != 9)
 {
 putchar(',');
 }
