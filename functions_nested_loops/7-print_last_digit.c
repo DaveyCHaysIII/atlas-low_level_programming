@@ -6,19 +6,11 @@
  * Return: returns the last digit of a number
  */
 
-int print_last_digit(int n)
+int print_last_digit(int i)
 {
-int i;
-i = n % 10;
-if (i < 0)
-{
-_putchar(-i);
-return (-i);
+	i = i % 10;
+	if (i < 0)
+		i = i * (-1);
+	_putchar(i + '0');
+	return (i);
 }
-else
-{
-_putchar(i);
-return (i);
-}
-}
-
