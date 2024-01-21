@@ -14,7 +14,7 @@ if (n > 0)
 putchar(43);
 return (1);
 }
-else if (n = 0)
+else if (n == 0)
 {
 putchar(64);
 return (0);
