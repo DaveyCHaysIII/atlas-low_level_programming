@@ -16,19 +16,25 @@ for (j = 0; j < 10; j++)
 sum =(i * j);
 sum1 =(sum/10);
 sum2 =(sum % 10);
+if (j != 0)
+{
+putchar(' ');
+}
 if (sum1 == 0)
 {
-_putchar(sum2 + '10');
-_putchar(' ');
+putchar(' ');
+putchar(sum2 + '0');
 }
 else
 {
-_putchar(sum1 + '0');
-_putchar(sum2 + '0');
+putchar(sum1 + '0');
+putchar(sum2 + '0');
 }
-_putchar(',');
-_putchar(' ');
+if(j != 9)
+{
+putchar(',');
 }
-_putchar('\n');
+}
+putchar('\n');
 }
 }
