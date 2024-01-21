@@ -10,16 +10,13 @@ void times_table(void)
 int i;
 for (i = 0; i < 10; i++)
 {
+printf("0, ");
 int j, sum, sum1, sum2;
-for (j = 0; j < 10; j++)
+for (j = 1; j < 10; j++)
 {
 sum =(i * j);
 sum1 =(sum/10);
 sum2 =(sum % 10);
-if (j != 0)
-{
-putchar(' ');
-}
 if (sum1 == 0)
 {
 putchar(' ');
