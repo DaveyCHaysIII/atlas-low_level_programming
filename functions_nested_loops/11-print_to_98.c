@@ -11,7 +11,6 @@ void print_to_98(int n)
 {
 if (n < 98)
 {
-n = 98 - n;
 while (n < 99)
 {
 if (n != 98)
@@ -20,14 +19,13 @@ printf("%d, ", n);
 }
 else
 {
-printf("%d", n);
+printf("%d\n", n);
 }
 n++;
 }
 }
-else if (n > 98)
+else if (n >= 98)
 {
-n = n - 98;
 while (n > 97)
 {
 if (n != 98)
@@ -36,14 +34,10 @@ printf("%d, ", n);
 }
 else
 {
-printf("%d", n);
+printf("%d\n", n);
 }
 n--;
 }
-}
-else 
-{
-printf("98");
 }
 }
 
