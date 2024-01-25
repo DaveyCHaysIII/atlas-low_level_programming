@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- *
- * _isupper(int c)- returns a value if a given int represents an upper case ASCII character or not
+ * _isupper()- returns a value if c is uppercase
  *
  *@c: The character in question
  *
@@ -12,8 +11,9 @@
 
 int _isupper(int c)
 {
-if ((c >= 'A') && (c <= 'Z')
-	return (1);
-	else
-	return (0);
+if ((c >= 'A') && (c <= 'Z'))
+{
+return (1);
+}
+return (0);
 }
