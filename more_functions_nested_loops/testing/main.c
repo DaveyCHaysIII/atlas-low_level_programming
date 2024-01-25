@@ -11,8 +11,9 @@ else
 int i;
 for (i = 0; i <= n; i++)
 {
-putchar('_');
+putchar(' ');
 }
+putchar('\\');
 putchar('\n');
 }
 }
@@ -20,8 +21,9 @@ putchar('\n');
 int main()
 {
 print_line(2);
-print_line(7);
-print_line(0);
+print_line(3);
+print_line(4);
+print_line(5);
 print_line(-2);
 print_line(14);
 return (0);
