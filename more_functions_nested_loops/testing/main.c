@@ -1,25 +1,28 @@
 #include <stdio.h>
 
-void more_numbers(void)
+void print_line(int n)
 {
-int i, j;
-for (i = 0; i < 10; i++)
+if (n <= 0)
 {
-for (j = 0; j <= 14; j++)
-{
-if (j > 9)
-{
-putchar('1');
+putchar('\n');
 }
-putchar ((j % 10) + '0');
+else
+{
+int i;
+for (i = 0; i <= n; i++)
+{
+putchar('_');
 }
 putchar('\n');
 }
 }
 
-
-int main(void)
+int main()
 {
-more_numbers();
-return(0);
+print_line(2);
+print_line(7);
+print_line(0);
+print_line(-2);
+print_line(14);
+return (0);
 }
