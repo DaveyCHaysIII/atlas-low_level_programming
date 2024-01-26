@@ -1,33 +1,41 @@
 #include <stdio.h>
 
-void print_square(int size)
+void print_triangle(int size)
 {
-if (size <= 0)
-        {
-        putchar('\n');
-        }
-else
-        {
-        int i, j;
+int i, j;
 
-        for (i = 0; i < size; i++)
+if (size <= 0)
+{
+        putchar('\n');
+}
+else
+{
+
+for (i = size; i >= 1; i--)
+{
+        for (j = 1; j <= size; j++)
         {
-                for (j = 0; j < size; j++)
+                if (j < i)
+                {
+                        putchar(' ');
+                }
+                else
                 {
                         putchar('#');
                 }
+        }
         putchar('\n');
-        }
-        }
+}
+}
 }
 
-int main()
+
+
+int main(void)
 {
-
-print_square(0);
-print_square(2);
-print_square(-2);
-print_square(10);
-
+print_triangle(0);
+print_triangle(2);
+print_triangle(4);
+print_triangle(10);
 return (0);
 }
