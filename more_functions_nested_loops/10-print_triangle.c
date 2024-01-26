@@ -13,7 +13,7 @@ int i, j;
 
 if (size <= 0)
 {
-	_putchar("\n");
+	_putchar('\n');
 }
 else
 {
@@ -31,7 +31,7 @@ for (i = size; i >= 1; i--)
 			_putchar('#');
 		}
 	}
-	_putchar("\n");
+	_putchar('\n');
 }
 }
 }
