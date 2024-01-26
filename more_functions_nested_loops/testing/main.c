@@ -1,30 +1,33 @@
 #include <stdio.h>
 
-void print_line(int n)
+void print_square(int size)
 {
-if (n <= 0)
-{
-putchar('\n');
-}
+if (size <= 0)
+        {
+        putchar('\n');
+        }
 else
-{
-int i;
-for (i = 0; i <= n; i++)
-{
-putchar(' ');
-}
-putchar('\\');
-putchar('\n');
-}
+        {
+        int i, j;
+
+        for (i = 0; i < size; i++)
+        {
+                for (j = 0; j < size; j++)
+                {
+                        putchar('#');
+                }
+        putchar('\n');
+        }
+        }
 }
 
 int main()
 {
-print_line(2);
-print_line(3);
-print_line(4);
-print_line(5);
-print_line(-2);
-print_line(14);
+
+print_square(0);
+print_square(2);
+print_square(-2);
+print_square(10);
+
 return (0);
 }
