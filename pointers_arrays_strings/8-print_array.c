@@ -14,7 +14,7 @@ int i;
 
 if (n < 1)
 {
-printf("");
+printf(" ");
 }
 else
 {
