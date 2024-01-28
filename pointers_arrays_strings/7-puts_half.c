@@ -21,7 +21,7 @@ if (i % 2)
 {
 for (i = i; i >= j; i--)
 {
-_putchar(str[i];
+_putchar(str[i]);
 }
 }
 else
