@@ -16,11 +16,7 @@ result = 0;
 sign = 0;
 for (i = 0; s[i] != '\0'; i++)
 {
-if (isdigit(s[i]))
-{
-result = result * 10 + (s[i] - '0');
-}
-else if (s[i] == '-')
+if (s[i] == '-')
 {
 sign--;
 }
@@ -28,7 +24,11 @@ else if (s[i] == '+')
 {
 sign++;
 }
-}
+if (isdigit(s[i]))
+{
+result = result * 10 + (s[i] - '0');
+if (!isdigit(s[(i + 1)]))
+{
 if (sign < 0)
 {
 return (result * -1);
@@ -38,3 +38,8 @@ else
 return (result);
 }
 }
+}
+}
+return (result);
+}
+
