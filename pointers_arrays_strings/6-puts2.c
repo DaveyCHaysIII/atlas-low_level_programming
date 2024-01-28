@@ -13,14 +13,14 @@ int i, j;
 
 while (str[i] != '\0')
 {
-i++
+i++;
 }
 j = i / 2;
 i = 0;
 
 while (j > 0)
 {
-_putchar(s[i]);
+_putchar(str[i]);
 j--;
 i = i + 2;
 }
