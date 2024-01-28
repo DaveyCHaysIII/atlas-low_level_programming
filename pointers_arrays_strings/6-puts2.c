@@ -25,5 +25,5 @@ _putchar(str[i]);
 j--;
 i = i + 2;
 }
-
+_putchar('\n');
 }
