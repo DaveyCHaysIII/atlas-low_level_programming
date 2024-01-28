@@ -16,20 +16,16 @@ while (str[i] != '\0')
 {
 i++;
 }
-j = i / 2;
 if (i % 2)
 {
-for (j = j; j < i; j++)
-{
-_putchar(str[i]);
-}
+j = (i - 1) / 2;
 }
 else
+j = i / 2;
+
+for (j = j; j < i; j++)
 {
-for (i = 0; i <= j; i++)
-{
-_putchar(str[i]);
-}
+_putchar(str[j]);
 }
 _putchar('\n');
 }
