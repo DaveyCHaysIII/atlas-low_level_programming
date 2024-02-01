@@ -16,8 +16,8 @@ char *_strncat(char *dest, char *src, int n)
 	i = 0;
 	j = 0;
 	lensrc = 0;
-	charcount = n / 4;
-	charcount = (charcount < 1) ? 1 : charcount;
+	charcount = n;
+	/*charcount = (charcount < 1) ? 1 : charcount;*/
 	while (dest[i] != '\0')
 	{
 		i++;
