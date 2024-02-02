@@ -1,19 +1,56 @@
 #include <stdio.h>
-int _strlen(char *s)
+
+/**
+ * print_array - print an array of integers
+ * @a: an array of integers
+ * @n: the number of elements to swap
+ *
+ * Return: nothing.
+ */
+
+void reverse_array(int *a, int n)
 {
-int i=0;
+        int tmp, i, pt;
 
-while(s[i] != '\0')
+        pt = n / 2;
+	n--;
+        for (i = 0; i <= pt; i++)
+        {
+                tmp = a[n];
+                a[n] = a[i];
+                a[i] = tmp;
+                n--;
+        }
+}
+
+void print_array(int *a, int n)
 {
-	i++;
-}
-return (i);
+    int i;
+
+    i = 0;
+    while (i < n)
+    {
+        if (i != 0)
+        {
+            printf(", ");
+        }
+        printf("%d", a[i]);
+        i++;
+    }
+    printf("\n");
 }
 
-
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-char str[] = "Hello world!";
-printf("%s is %d characters long\n", str, _strlen(str));
-return (0);
+    int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 98, 1024, 1337};
+
+    print_array(a, sizeof(a) / sizeof(int));
+    reverse_array(a, sizeof(a) / sizeof(int));
+    print_array(a, sizeof(a) / sizeof(int));
+    return (0);
 }
