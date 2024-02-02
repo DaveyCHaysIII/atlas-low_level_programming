@@ -10,18 +10,19 @@
 
 void reverse_array(int *a, int n)
 {
-        int tmp, i, pt;
+        int tmp, i;
 
-        pt = n / 2;
-	n--;
-        for (i = 0; i <= pt; i++)
+        n--;
+        while (i <= n)
         {
                 tmp = a[n];
                 a[n] = a[i];
                 a[i] = tmp;
+                i++;
                 n--;
         }
 }
+
 
 void print_array(int *a, int n)
 {
@@ -47,7 +48,7 @@ void print_array(int *a, int n)
  */
 int main(void)
 {
-    int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 98, 1024, 1337};
+    int a[] = {234234, 64534, 77632, 8723451, 98987, 1345231, 98534597, 23456789, 6235456, 41235416, 374578, 10435434, 89734567, 89734567, 10435434, 374578, 41235416, 6235456, 23456789, 98534597, 1345231, 98987, 8723451, 77632, 64534, 234234};
 
     print_array(a, sizeof(a) / sizeof(int));
     reverse_array(a, sizeof(a) / sizeof(int));
