@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- *
- * int_strspn()- compares prefix to string
+ * _strspn()- compares prefix to string
  * @s: the string in question
  * @accept: the prefix substring in question
  *
@@ -12,7 +11,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i, j, output;
-	
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; accept[j] != '\0'; j++)
@@ -25,7 +24,7 @@ unsigned int _strspn(char *s, char *accept)
 			else
 			{
 				output = 0;
-				break; 
+				break;
 			}
 		}
 		if (output > 0)
