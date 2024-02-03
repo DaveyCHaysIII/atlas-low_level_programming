@@ -44,8 +44,8 @@ int main(void)
 {
 
 
-char sa[] = "wdy!";
-char sb[] = "Hoydy!";
+char sa[] = "Holberton";
+char sb[] = "Holbeerton!";
 
 char sc[] = "Heavy is the crown";
 char sd[] = "Heavy is the fr";
