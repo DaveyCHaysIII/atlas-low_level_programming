@@ -6,6 +6,7 @@
  *
  * Return: string
  */
+int islowerletter(char *);
 
 char *cap_string(char *s)
 {
@@ -29,6 +30,7 @@ char *cap_string(char *s)
  * islowerletter()- checks if c is a lower case letter
  * @c: the letter in question
  *
+ * Return: int
  */
 
 int islowerletter(char *c)
