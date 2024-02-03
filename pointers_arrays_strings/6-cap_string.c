@@ -33,7 +33,7 @@ char *cap_string(char *s);
 
 int islowerletter(char *c)
 {
-	if ((c > 96) && (c < 123))
+	if ((*c > 96) && (*c < 123))
 	{
 		return (1);
 	}
