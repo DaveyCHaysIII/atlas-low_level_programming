@@ -1,57 +1,62 @@
 #include <stdio.h>
 
-/**
- * print_array - print an array of integers
- * @a: an array of integers
- * @n: the number of elements to swap
- *
- * Return: nothing.
- */
-
-void reverse_array(int *a, int n)
+int _strcmp(char *s1, char *s2)
 {
-        int tmp, i;
+	int sign, lens1, lens2, i, output;
 
-        n--;
-        while (i <= n)
-        {
-                tmp = a[n];
-                a[n] = a[i];
-                a[i] = tmp;
-                i++;
-                n--;
-        }
+	i = 0;
+	sign = 1;
+	lens1 = 0;
+	lens2 = 0;
+	output = 0;
+	while (s1[lens1] != '\0')
+	{
+		lens1++;
+	}
+	while (s2[lens2] != '\0')
+	{
+		lens2++;
+	}
+	if (lens2 > lens1)
+	{
+		sign = -1;
+	}
+	for (i = 0; i < lens1; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			if (s1[i] > s2[i])
+			{
+				output = ((s1[i] - s2[i]) * sign);
+				i = lens1;
+			}
+			else
+			{
+				output =  ((s2[i] - s1[i]) * sign);
+				i = lens1;
+			}
+		}
+	}
+	return(output);
 }
 
-
-void print_array(int *a, int n)
-{
-    int i;
-
-    i = 0;
-    while (i < n)
-    {
-        if (i != 0)
-        {
-            printf(", ");
-        }
-        printf("%d", a[i]);
-        i++;
-    }
-    printf("\n");
-}
-
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
 int main(void)
 {
-    int a[] = {234234, 64534, 77632, 8723451, 98987, 1345231, 98534597, 23456789, 6235456, 41235416, 374578, 10435434, 89734567, 89734567, 10435434, 374578, 41235416, 6235456, 23456789, 98534597, 1345231, 98987, 8723451, 77632, 64534, 234234};
 
-    print_array(a, sizeof(a) / sizeof(int));
-    reverse_array(a, sizeof(a) / sizeof(int));
-    print_array(a, sizeof(a) / sizeof(int));
-    return (0);
+
+char sa[] = "wdy!";
+char sb[] = "Hoydy!";
+
+char sc[] = "Heavy is the crown";
+char sd[] = "Heavy is the fr";
+
+char se[] = "Zebra";
+char sf[] = "Yabba dabba doo";
+
+printf("%d\n", _strcmp(sa, sb));
+printf("%d\n", _strcmp(sc, sd));
+printf("%d\n", _strcmp(se, sf));
+printf("%d\n", _strcmp(se, se));
+
+return (0);
 }
