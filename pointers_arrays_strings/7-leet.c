@@ -10,8 +10,8 @@
 char *leet(char *s)
 {
 	int i, j;
-	char input[] = {a, A, e, E, o, O, t, T, l, L};
-	char output[] = {52, 52, 51, 51, 48, 48, 55, 55, 49, 49};
+	char input[] = "aAeEoOtTlL";
+	char output[] = "4433007711";
 
 
 	for (i = 0; s[i] != '\0'; i++)
