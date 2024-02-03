@@ -18,7 +18,7 @@ char *cap_string(char *s)
 		{
 			s[i] = s[i] - 32;
 		}
-		if ((islower(s[i])) && (!isalpha(s[(i - 1)])))
+		if ((islower(s[i])) && (!isalnum(s[(i - 1)])))
 		{
 			s[i] = s[i] - 32;
 		}
