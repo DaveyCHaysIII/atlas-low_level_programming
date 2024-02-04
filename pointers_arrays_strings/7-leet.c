@@ -11,7 +11,7 @@ char *leet(char *s)
 {
 	int i, j;
 	char input[] = "aAeEoOtTlL";
-	char output[] = "4433007711";
+	char output[] = "114433007711";
 
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -20,7 +20,7 @@ char *leet(char *s)
 		{
 			if (s[i] == input[j])
 			{
-				i++;
+				s[i] == output[j]; 
 			}
 		}
 	}
