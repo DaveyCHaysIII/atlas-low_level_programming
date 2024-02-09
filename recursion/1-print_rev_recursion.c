@@ -1,4 +1,9 @@
 #include "main.h"
+
+int _strlen_recursion(char *s, int i);
+void reverse(char *s, int len, int i);
+void _puts_recursion(char *s);
+
 /**
  * _print_rev_recursion()- recursively prints reversed string
  * @s: the string in question
