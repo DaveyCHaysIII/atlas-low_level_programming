@@ -37,10 +37,7 @@ int _strlen_recursion(char *s, int i)
 	{
 		_strlen_recursion(s + 1, i + 1);
 	}
-	else
-	{
-		return (i);
-	}
+	return (i);
 }
 
 /**
@@ -56,7 +53,7 @@ void reverse(char *s, int len, int i)
 {
 	int temp;
 
-	if(len > i)
+	if (len > i)
 	{
 		temp = s[len];
 		s[len] = s[i];
@@ -74,13 +71,14 @@ void reverse(char *s, int len, int i)
 
 void _puts_recursion(char *s)
 {
-        if (s[0] != '\0')
-        {       _putchar(s[0]);
-                _puts_recursion(s + 1);
-        }
-        else
-        {
-                _putchar('\n');
-        }
+	if (s[0] != '\0')
+	{
+		_putchar(s[0]);
+		_puts_recursion(s + 1);
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }
 
