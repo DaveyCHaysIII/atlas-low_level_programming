@@ -35,7 +35,8 @@ int _strlen_recursion(char *s, int i)
 {
 	if (s[i] != '\0')
 	{
-		_strlen_recursion(s + 1, i + 1);
+		i++;
+		_strlen_recursion(s + 1, i);
 	}
 	return (i);
 }
@@ -58,7 +59,7 @@ void reverse(char *s, int len, int i)
 		temp = s[len];
 		s[len] = s[i];
 		s[i] = temp;
-		reverse(s, len--, i++);
+		reverse(s, --len, ++i);
 	}
 }
 
