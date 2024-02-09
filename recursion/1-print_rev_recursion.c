@@ -19,7 +19,7 @@ void _print_rev_recursion(char *s)
 	i = 0;
 	len = _strlen_recursion(s, 0);
 	reverse(s, len, i);
-	-puts_recursion(s);
+	_puts_recursion(s);
 
 }
 
