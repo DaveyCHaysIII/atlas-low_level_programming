@@ -22,7 +22,7 @@ int _sqrt_recursion(int n)
  * Return: the square
  */
 
-int _sqrt(int n, int i);
+int _sqrt(int n, int i)
 {
 	if (n < 0 || i == n)
 	{
