@@ -39,7 +39,7 @@ int _prime(int n, int i)
 	{
 		return (0);
 	}
-	else`
+	else
 	{
 		return (_prime(n, ++i));
 	}
