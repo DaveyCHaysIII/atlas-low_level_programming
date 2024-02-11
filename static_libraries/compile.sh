@@ -11,6 +11,9 @@ for file in *.c; do
             echo "Compiled $file successfully"
         else
             echo "Failed to compile $file"
+	    exit 1
         fi
     fi
 done
+
+ar rc libmy.a *.o

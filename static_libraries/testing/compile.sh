@@ -14,3 +14,5 @@ for file in *.c; do
         fi
     fi
 done
+
+ar rc libmy.a *.o
