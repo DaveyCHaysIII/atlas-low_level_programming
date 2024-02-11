@@ -16,5 +16,6 @@ for file in *.c; do
     fi
 done
 
-ar rc libmy.a *.o
-ranlib libmy.a
+#create library and index
+ar rc liball.a *.o
+ranlib liball.a
