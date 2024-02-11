@@ -17,3 +17,4 @@ for file in *.c; do
 done
 
 ar rc libmy.a *.o
+ranlib libmy.a
