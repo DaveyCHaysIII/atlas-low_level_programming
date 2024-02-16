@@ -15,7 +15,20 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
+	unsigned int i, j;
 	char *arr;
 
-	arr = malloc(sizeof(str));	
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+
+	arr = malloc(sizeof(str) * (i + 1));
+	for (j = 0; j < i; j++)
+	{
+		arr[j] = str[j];
+	}
+	arr[i] = '\0';
+	return (*arr);
 }
