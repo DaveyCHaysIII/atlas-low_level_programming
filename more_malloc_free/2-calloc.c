@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
 
-/** _calloc()- allocates memory
+/**
+ * _calloc()- allocates memory
  * @nmemb: a number!
  * @size: another number!
  *
@@ -18,9 +19,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 	str = calloc(nmemb, size);
-	if(str == NULL)
+	if (str == NULL)
 	{
-		return (NULL)
+		return (NULL);
 	}
 	return (str);
 }
