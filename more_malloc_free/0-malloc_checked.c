@@ -12,7 +12,7 @@ void *malloc_checked(unsigned int b)
 {
 	unsigned int *i;
 
-	i = malloc(sizeof(unsigned int) * b);
+	i = malloc(b);
 
 	if (i == NULL)
 	{
