@@ -1,6 +1,14 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * alloc_grid()- allocates a grid
+ * @height: height of grid
+ * @width: width of grid
+ *
+ * Return: grid
+ */
+
 int **alloc_grid(int width, int height)
 {
 	int i;
