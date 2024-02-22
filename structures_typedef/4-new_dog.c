@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dog.h"
 
 /**
@@ -18,8 +19,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char saved_name[];
 	char saved_owner[];
 
-	saved_name[] = strcpy(name);
-	saved_owner[] = strcpy(owner);
+	saved_name = strcpy(name);
+	saved_owner = strcpy(owner);
 	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
 	{
