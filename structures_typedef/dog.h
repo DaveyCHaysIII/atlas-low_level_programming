@@ -1,5 +1,3 @@
-typedef struct dog;
-
 /**
  * dog - its a dog
  * @name: name
@@ -9,7 +7,7 @@ typedef struct dog;
  * Description: its a dog
  */
 
-dog 
+struct dog 
 {
 	char *name;
 	float age;
