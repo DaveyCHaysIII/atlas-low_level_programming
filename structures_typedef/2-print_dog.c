@@ -11,7 +11,7 @@
 
 void print_dog(struct dog *d)
 {
-	char nil[3] = "nil";
+	char nil[5] = "(nil)";
 
 	if (d != NULL)
 	{
