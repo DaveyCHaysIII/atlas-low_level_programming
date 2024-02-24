@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	op = argv[2][0];
 	valid_ops = "+-*/%";
 
-	if ((strlen(op) != 1) || (strchr(valid_ops, op) != NULL))
+	if (strchr(valid_ops, op) != NULL)
 	{
 		printf("Error\n");
 		return (99);
