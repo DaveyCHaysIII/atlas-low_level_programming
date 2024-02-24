@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	op = argv[2][0];
 
-	if (op != '+' && op != '-' && op != '*' && op != '/' && op != '%' && sizeof(op) > 1)
+	if ((op != '+' && op != '-' && op != '*' && op != '/' && op != '%') || sizeof(op) != 1)
 	{
 		printf("Error\n");
 		return (99);
