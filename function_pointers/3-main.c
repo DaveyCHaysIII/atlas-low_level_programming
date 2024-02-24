@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main()- the main function
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
 {
 	int num1, num2;
 	char op;
+	char *valid_ops;
 
 	if (argc != 4)
 	{
@@ -25,8 +27,9 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	op = argv[2][0];
+	valid_ops = "+-*/%";
 
-	if ((op != '+' && op != '-' && op != '*' && op != '/' && op != '%') || sizeof(op) != 1)
+	if ((strlen(op) != 1) || (strchr(valid_ops, op) != NULL))
 	{
 		printf("Error\n");
 		return (99);
