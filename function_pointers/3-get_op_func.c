@@ -6,8 +6,6 @@
 /**
  * get_op_func()- gets the function for each operator
  * @s: the operator in question
- * @a: the first arg passed
- * @b: the second arg passed
  *
  * Return: result of op
  */
@@ -29,7 +27,7 @@ int (*get_op_func(char *s))(int a, int b)
 	{
 		if (ops[i].op[0] == *s)
 		{
-			return ops[i].f;
+			return (ops[i].f);
 		}
 		i++;
 	}
