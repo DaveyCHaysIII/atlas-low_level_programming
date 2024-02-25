@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 
 	va_start(ptr, format);
 	i = 0;
-	while (format[i] != '\0' || format != NULL)
+	while (format[i] != '\0' && format != NULL)
 	{
 		val = 0;
 		switch (format[i])
