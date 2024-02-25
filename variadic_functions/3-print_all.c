@@ -53,9 +53,9 @@ void print_all(const char * const format, ...)
 		printf("%s", str);
 		val++;
 		break;
-		}
-		case NULL:
+		case NULL: 
 		break;
+		}
 		if (format[i + 1] != '\0' && val > 0)
 		{
 			printf(", ");
