@@ -45,7 +45,6 @@ void print_all(const char * const format, ...)
 			printf("(nil)");
 			break;
 		}
-		str = va_arg(ptr, char*);
 		printf("%s", str);
 		break;
 		}
