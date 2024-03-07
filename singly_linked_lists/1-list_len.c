@@ -6,7 +6,7 @@
  * list_len()- gives number of elements in list
  * @h: the head of list
  *
- * Return: number of elements 
+ * Return: number of elements
  */
 
 size_t list_len(const list_t *h)
