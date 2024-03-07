@@ -28,7 +28,7 @@ size_t print_list(const list_t *h)
 			string = current->str;
 			length = current->len;
 		}
-		printf("[%d] %s", length, string);
+		printf("[%d] %s\n", length, string);
 		current = current->next;
 		nodeCount++;
 	}
