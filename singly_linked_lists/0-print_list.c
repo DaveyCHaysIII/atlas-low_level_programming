@@ -16,7 +16,7 @@ size_t print_list(const list_t *h)
 	const list_t *current = h;
 
 	nodeCount = 0;
-	while (current->next != NULL)
+	while (current != NULL)
 	{
 		if (current->str == NULL)
 		{
