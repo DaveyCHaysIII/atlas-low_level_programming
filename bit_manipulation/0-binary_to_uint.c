@@ -10,27 +10,27 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int length, i;
-	unsigned int num;
+	unsigned int i, j, num, length;
 
 	if (b == NULL)
-		return (0);
+		return 0;
 
 	length = _strlen(b);
+	j = length;
 	num = 0;
 	for (i = 0; i < length; i++)
 	{
-		num = num << 1;
 		if (b[i] == '1')
 		{
-			num = num | 1;
+			num += (1 << j);
 		}
-		else if (b[i] == '0')
+		else if (b[i] != '0')
 		{
 			return (0);
 		}
+		j--;
 	}
-	return (num);
+	return (num / 2);
 }
 
 /**
