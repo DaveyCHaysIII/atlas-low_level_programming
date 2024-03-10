@@ -11,13 +11,13 @@
 
 void free_listint2(listint_t **head)
 {
+	if (head == NULL)
+	{
+		printf("why");
+	}
+
 	listint_t *current = *head;
 	listint_t *next;
-
-	if (current == NULL)
-	{
-		printf("why ask for this");
-	}
 
 	while (current != NULL)
 	{
