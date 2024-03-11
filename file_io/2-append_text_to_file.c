@@ -17,7 +17,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	int fd;
 	ssize_t bytes_written;
 
-	if (filename == NULL | (access(filename, (F_OK | W_OK))) != 0)
+	if (filename == NULL || (access(filename, (F_OK | W_OK))) != 0)
 	{
 		return (-1);
 	}
