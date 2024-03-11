@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <errno.h>
 
 /**
  * append_text_to_file()- appends text to a file
