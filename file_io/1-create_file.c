@@ -1,7 +1,7 @@
 #include "main.h"
 #include <fcntl.h>
 #include <stddef.h>
-#include <sys/type.h>
+#include <sys/types.h>
 #include <stdlib.h>
 
 /**
