@@ -12,7 +12,7 @@
  * Return: 0 on success
  */
 
-int main(int argc, char *argv[]);
+int main(int argc, char *argv[])
 {
 	int fd_source, fd_dest, fd_read, fd_written;
 	char buffer[1024];
