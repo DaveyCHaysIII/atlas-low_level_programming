@@ -35,21 +35,22 @@ int main(int argc, char *argv[])
 		close(fd_source);
 		return (99);
 	}
-	fd_read = read(fd_source, buffer, 1024);
+	while ((fd_read = read(fd_source, buffer, 1024)) > 0)
+	{
+		fd_written = write(fd_dest, buffer, fd_read);
+		if (fd_written != fd_read)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(fd_source);
+			return (99);
+		}
+	}
 	if (fd_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_source);
 		close(fd_dest);
+		close(fd_source);
 		return (98);
-	}
-	fd_written = write(fd_dest, buffer, 1024);
-	if (fd_written == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
-		close(fd_source);
-		close(fd_dest);
-		return (99);
 	}
 	if (close(fd_source) == -1)
 	{
