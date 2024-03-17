@@ -1,6 +1,7 @@
 #include "hash_tables.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * hash_table_delete()- delete a hash table
@@ -11,20 +12,25 @@
 
 void hash_table_delete(hash_table_t *ht)
 {
-	int i;
+	unsigned long int i;
 	hash_node_t *current, *tmp;
 
-	for (i = 0; ht->array[i]; i++)
+	for (i = 0; i < ht->size; i++)
 	{
-		current = ht->array[i];
-		while (current != NULL)
-		{
-			tmp = current->next;
-			free(current->key);
-			free(current->value);
-			free(current);
-			current = tmp;
+		if (ht->array[i] != NULL)
+		{	
+			current = ht->array[i];
+			while (current != NULL)
+			{
+				tmp = current->next;
+				free(current->key);
+				free(current->value);
+				free(current);
+				printf("Free'd a value!\n");
+				current = tmp;
+			}
 		}
 	}
+	free(ht->array);
 	free(ht);
 }
