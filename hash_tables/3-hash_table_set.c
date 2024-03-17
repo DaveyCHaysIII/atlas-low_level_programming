@@ -36,7 +36,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		hash_node_t *current = ht->array[index];
-
+		
+		i = 0;
 		while (current->next != NULL)
 		{
 			current = current->next;
