@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int i;
 
 	new = malloc(sizeof(hash_node_t));
-	if (key == NULL || *key == '\0')
+	if (key == NULL || *key == '\0' || ht == NULL )
 	{
 		return (0);
 	}
