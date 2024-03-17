@@ -1,5 +1,6 @@
 #include "hash_tables.h"
 #include <stddef.h>
+#include <string.h>
 
 /**
  * hash_table_get()- retrieve a value from the table
@@ -20,10 +21,24 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	index = (hash_djb2((const unsigned char *)key) % ht->size);
 	if (ht->array[index] != NULL)
 	{
-		return (ht->array[index]->value);
+		if (strcmp(ht->array[index]->key, key) == 0)
+			return (ht->array[index]->value);
+		else if (ht->array[index]->next != NULL)
+		{
+			hash_node_t *current;
+
+			while (current->next != NULL)
+			{
+				current = ht->array[index]->next;
+				if (strcmp(current->key, key) == 0)
+				{
+					return (current->value);
+				}
+			}
+		}
+		else
+			return (NULL);
 	}
 	else
-	{
 		return (NULL);
-	}
 }
