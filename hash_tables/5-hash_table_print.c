@@ -31,11 +31,11 @@ void hash_table_print(const hash_table_t *ht)
 		{
 			if (lastnode == i)
 			{
-				printf("%s: %s", ht->array[i]->key, ht->array[i]->value);
+				printf("'%s': '%s'", ht->array[i]->key, ht->array[i]->value);
 			}
 			else
 			{
-				printf("%s: %s, ", ht->array[i]->key, ht->array[i]->value);
+				printf("'%s': '%s', ", ht->array[i]->key, ht->array[i]->value);
 			}
 		}
 	}
