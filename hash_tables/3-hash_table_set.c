@@ -20,6 +20,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int i;
 	hash_node_t *new = malloc(sizeof(hash_node_t));
 
+	if (*key == NULL || key == "\0")
+	{
+		return (0);
+	}
 	if (new == NULL)
 	{
 		return (0);
@@ -36,14 +40,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		hash_node_t *current = ht->array[index];
-		
-		i = 0;
-		while (current->next != NULL)
-		{
-			current = current->next;
-			i++;
-		}
-		current->next = new;
+		ht->array[index] = new;
+		new->next = current;
 		return (1);
 	}
 }
