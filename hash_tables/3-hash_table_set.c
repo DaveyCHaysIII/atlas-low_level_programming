@@ -16,7 +16,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 
-	unsigned long int key, index;
+	unsigned long int index;
 	int i;
 
 	index = (hash_djb2((const unsigned char *)key) % ht->size);
