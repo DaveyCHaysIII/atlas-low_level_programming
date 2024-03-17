@@ -18,6 +18,7 @@ void hash_table_print(const hash_table_t *ht)
 		return;
 
 	printf("{");
+	count = 1;
 	lastnode = 0;
 	for (i = 0; i <= ht->size; i++)
 	{
@@ -30,7 +31,6 @@ void hash_table_print(const hash_table_t *ht)
 	}
 	for (i = 0; i <= ht->size; i++)
 	{
-		count = 0;
 		current = ht->array[i];
 		while (current != NULL)
 		{
