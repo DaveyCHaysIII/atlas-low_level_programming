@@ -20,7 +20,7 @@ void hash_table_print(const hash_table_t *ht)
 	printf("{");
 	count = 1;
 	lastnode = 0;
-	for (i = 0; i <= ht->size; i++)
+	for (i = 0; i < ht->size; i++)
 	{
 		current = ht->array[i];
 		while (current != NULL)
@@ -29,7 +29,7 @@ void hash_table_print(const hash_table_t *ht)
 			current = current->next;
 		}
 	}
-	for (i = 0; i <= ht->size; i++)
+	for (i = 0; i < ht->size; i++)
 	{
 		current = ht->array[i];
 		while (current != NULL)

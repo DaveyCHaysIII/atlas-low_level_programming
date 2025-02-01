@@ -19,11 +19,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new, *current;
 	int i;
 
-	new = malloc(sizeof(hash_node_t));
 	if (key == NULL || *key == '\0' || ht == NULL)
-	{
 		return (0);
+
+	index = key_index((const unsigned char *)key, ht->size);
+	for (i = index; ht->array[i]; i++) /* checks if keys are the same */
+	{
+		if (strcmp(ht->array[i]->key, key) == 0)
+		{
+			free(ht->array[i]->value);
+			ht->array[i]->value = strdup(value);
+			return (1);
+		}
 	}
+
+	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
 	{
 		return (0);
@@ -31,23 +41,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->key = strdup(key);
 	new->value = strdup(value);
 	new->next = NULL;
-	index = (hash_djb2((const unsigned char *)key) % ht->size);
+
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = new;
 		return (1);
 	}
-	else
+	else /* if collision */
 	{
-		for (i = index; ht->array[i]; i++)
-		{
-			if (strcmp(ht->array[i]->key, key) == 0)
-			{
-				free(ht->array[i]->value);
-				ht->array[i]->value = strdup(value);
-				return (1);
-			}
-		}
 		current = ht->array[index];
 		ht->array[index] = new;
 		new->next = current;
