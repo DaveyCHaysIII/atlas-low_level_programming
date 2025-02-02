@@ -69,7 +69,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new;
 		new->next = current;
 	}
-
 	current = ht->shead;
 	if (current == NULL) /* table is empty */
 	{
@@ -80,8 +79,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	for (i = 0 ;; i++) /* traverse */
 	{
-
-		/*printf("[key = %s, current = %s]\n", key, current->key);*/
 		if (*key < *current->key)
 		{
 			if (*key < *ht->shead->key) /* new is front */
@@ -102,7 +99,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	if (*key > *current->key) /* new is tail */
 	{
-		/*printf("current->key = %s, greatkey = %s\n", current->key, key);*/
 		ht->stail = new;
 		current->snext = new;
 		new->sprev = current;
