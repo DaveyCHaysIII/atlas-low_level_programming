@@ -61,40 +61,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (new == NULL)
 		return (0);
 
-	current = ht->shead;
-	if (current == NULL) /* table is empty */
-	{
-		printf("current == NULL, key = %s\n", key);
-		ht->shead = new;
-		ht->stail = new;
-		ht->array[index] = new;
-		return (1);
-	}
-	for (i = 0 ;; i++) /* traverse */
-	{
-		if (*key < *current->key)
-		{
-			printf("current != NULL, lesskey = %s\n", key);
-			if (*key < *ht->shead->key) /* new is front */
-			{
-				ht->shead = new;
-			}
-			new->snext = current;
-			new->sprev = NULL;
-			current->sprev = new;
-		}
-		if (current->next == NULL) break;
-
-		printf("loop\n");
-		current = current->next;
-	}
-	if (*key > *current->key) /* new is tail */
-	{
-		printf("current->key = %s, greatkey = %s\n", current->key, key);
-		ht->stail = new;
-		current->snext = new;
-		new->sprev = current;
-	}
 	if (ht->array[index] == NULL) /* index is empty */
 		ht->array[index] = new;
 	else /* collision */
@@ -102,6 +68,44 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		current = ht->array[index];
 		ht->array[index] = new;
 		new->next = current;
+	}
+
+	current = ht->shead;
+	if (current == NULL) /* table is empty */
+	{
+		ht->shead = new;
+		ht->stail = new;
+		ht->array[index] = new;
+		return (1);
+	}
+	for (i = 0 ;; i++) /* traverse */
+	{
+
+		/*printf("[key = %s, current = %s]\n", key, current->key);*/
+		if (*key < *current->key)
+		{
+			if (*key < *ht->shead->key) /* new is front */
+			{
+				ht->shead = new;
+			}
+			new->snext = current;
+			new->sprev = current->sprev;
+			if (i > 0)
+				current->sprev->snext = new;
+			current->sprev = new;
+
+			break;
+		}
+		if (current->snext == NULL) break;
+
+		current = current->snext;
+	}
+	if (*key > *current->key) /* new is tail */
+	{
+		/*printf("current->key = %s, greatkey = %s\n", current->key, key);*/
+		ht->stail = new;
+		current->snext = new;
+		new->sprev = current;
 	}
 	return (1);
 }
@@ -156,7 +160,7 @@ void shash_table_print(const shash_table_t *ht)
 	printf("{");
 	for (current = ht->shead; current != NULL; current = current->snext)
 	{
-		printf("%s: %s", current->key, current->value);
+		printf("'%s': '%s'", current->key, current->value);
 		if (current->snext != NULL)
 			printf(", ");
 	}
@@ -178,7 +182,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	printf("{");
 	for (current = ht->stail; current != NULL; current = current->sprev)
 	{
-		printf("%s: %s", current->key, current->value);
+		printf("'%s': '%s'", current->key, current->value);
 		if (current->sprev != NULL)
 			printf(", ");
 	}
