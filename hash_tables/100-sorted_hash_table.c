@@ -65,7 +65,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new;
 	else /* collision */
 	{
+
 		current = ht->array[index];
+		/*printf("--Collision! %s with %s--\n", key, current->key);*/
 		ht->array[index] = new;
 		new->next = current;
 	}
@@ -79,9 +81,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	for (i = 0 ;; i++) /* traverse */
 	{
-		if (*key < *current->key)
+		if (strcmp(key, current->key) < 0)
 		{
-			if (*key < *ht->shead->key) /* new is front */
+			if (strcmp(key, ht->shead->key) < 0) /* new is front */
 			{
 				ht->shead = new;
 			}
@@ -97,7 +99,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 		current = current->snext;
 	}
-	if (*key > *current->key) /* new is tail */
+	if (strcmp(key, current->key) > 0) /* new is tail */
 	{
 		ht->stail = new;
 		current->snext = new;
