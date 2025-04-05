@@ -23,27 +23,27 @@ betty-doc.pl)
 ---
 ### Index
 ---
-argc_argv
-bit_manipulation
-doubly_linked_lists
-file_io
-function_pointers
-functions_nested_loops
-hash_tables
-hello_world
-makefiles
-malloc_free
-more_functions_nested_loops
-more_malloc_free
-more_singly_linked_lists
-pointers_arrays_strings
-preprocessor
-recursion
-search_algorithms
-singly_linked_lists
-static_libraries
-structures_typedef
-variables_if_else_while
-variadic_functions
+- argc_argv
+- bit_manipulation
+- doubly_linked_lists
+- file_io
+- function_pointers
+- functions_nested_loops
+- hash_tables
+- hello_world
+- makefiles
+- malloc_free
+- more_functions_nested_loops
+- more_malloc_free
+- more_singly_linked_lists
+- pointers_arrays_strings
+- preprocessor
+- recursion
+- search_algorithms
+- singly_linked_lists
+- static_libraries
+- structures_typedef
+- variables_if_else_while
+- variadic_functions
 
 
