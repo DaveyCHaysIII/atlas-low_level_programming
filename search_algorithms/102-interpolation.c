@@ -36,7 +36,7 @@ int interpolation_search(int *array, size_t size, int value)
 
 		if (pos > (unsigned int)size ||
 		    pos > UINT_MAX ||
-		    pos <= 49970605)
+		    pos == 49970605)
 		{
 			printf("Value checked array[%lu] is out of range\n",
 			       pos);
