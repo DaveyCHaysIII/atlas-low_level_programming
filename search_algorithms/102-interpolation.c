@@ -16,6 +16,9 @@ int interpolation_search(int *array, size_t size, int value)
 	low = 0;
 	high = size - 1;
 
+	if (!array || size <= 0)
+		return (-1);
+
 	while (array[low] <= value && array[high] >= value)
 	{
 		if (low == high)
@@ -28,8 +31,8 @@ int interpolation_search(int *array, size_t size, int value)
 			}
 			return (-1);
 		}
-		pos = low + (((high - low) / (array[high] - array[low])) *
-		     (value - array[low]));
+		pos = low + (((double)(high - low) /
+		      (array[high] - array[low])) * (value - array[low]));
 
 		if (pos > (unsigned int)size || pos > UINT_MAX)
 		{
